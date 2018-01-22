@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include "ShaderHandler.h"
 //#define GLEW_STATIC
 
 #include <GL\glew.h>
@@ -8,6 +8,8 @@
 
 // Window Dimensions
 const GLint WIDTH = 800, HEIGHT = 600;
+
+
 const GLchar *vertexShaderSource = "#version 330 core\n" //Core shader language for 3.3
 "layout (location = 0) in vec3 position;\n"
 "void main()\n"
@@ -155,15 +157,19 @@ bool CompileShaders(GLuint& shaderProgram)
 int main()
 {
 
+	// Set up Window
 	GLFWwindow *window = nullptr;
 	if (!SetupWindow(window))
 		return 0;
 	
-	GLuint shaderProgram = 0;
-	if (!CompileShaders(shaderProgram))
+	// Set up shaders
+	ShaderHandler shaderHandler;
+	if (!shaderHandler.Init())
 		return 0;
 
 	Triangle* tri = new Triangle();
+
+
 	while (!glfwWindowShouldClose(window)) //while window is open
 	{
 		glfwPollEvents();
@@ -173,7 +179,8 @@ int main()
 		glClear(GL_COLOR_BUFFER_BIT);
 		
 		// Draw OpenGL
-		glUseProgram(shaderProgram);
+
+		shaderHandler.UseShaders();
 		tri->Draw();
 
 		glfwSwapBuffers(window);
