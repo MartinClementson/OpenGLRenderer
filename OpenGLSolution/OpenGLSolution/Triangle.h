@@ -2,6 +2,22 @@
 #include <GL\glew.h>
 #include <GLFW\glfw3.h>
 
+struct Vertex
+{
+	GLfloat x, y, z;
+	GLfloat r, g, b;
+	Vertex() {};
+	Vertex(GLfloat x, GLfloat y, GLfloat z, GLfloat r, GLfloat g, GLfloat b)
+	{
+		this->x = x;
+		this->y = y;
+		this->z = z;
+		this->r = r;
+		this->g = g;
+		this->b = b;
+	}
+};
+
 class Triangle
 {
 public:
@@ -11,12 +27,10 @@ public:
 	void Draw();
 
 private:
-	GLfloat vertices[9] =
-	{
-		-0.5f,-0.5f, 0.0f, // Bottom left
-		0.5f, -0.5f, 0.0f, // Bottom right
-		0.0f,  0.5,  0.0f  // Top
-	};
+
+	Vertex vertices[3];
+	
+	
 	GLuint VBO, VAO;
 
 
