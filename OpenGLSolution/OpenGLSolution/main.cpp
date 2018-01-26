@@ -77,7 +77,7 @@ int main()
 		glClear(GL_COLOR_BUFFER_BIT);
 		
 		// Draw OpenGL
-		shaderHandler.UseShaders(Shaders::COLOR);
+		shaderHandler.UseShader(Shaders::COLOR);
 		tri->Draw();
 
 		glfwSwapBuffers(window);

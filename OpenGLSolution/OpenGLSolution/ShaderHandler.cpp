@@ -19,8 +19,6 @@ bool ShaderHandler::Init()
 
 	for (size_t i = 0; i < NUM_SHADERS; i++)
 	{
-		std::cout << shaderFiles[i][VS_SHADER] << std::endl;
-		std::cout << shaderFiles[i][FS_SHADER] << std::endl;
 		const char * vs_str = shaderFiles[i][VS_SHADER].c_str();
 		const char * fs_str = shaderFiles[i][FS_SHADER].c_str();
 		try {
@@ -36,7 +34,7 @@ bool ShaderHandler::Init()
 	return success;	
 }
 
-bool ShaderHandler::UseShaders(Shaders type)
+bool ShaderHandler::UseShader(Shaders type)
 {
 	this->shaders[type].Use();
 	return true;

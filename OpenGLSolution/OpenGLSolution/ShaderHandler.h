@@ -25,7 +25,7 @@ public:
 	ShaderHandler();
 	~ShaderHandler();
 	bool Init();
-	bool UseShaders(Shaders type = Shaders::COLOR);
+	bool UseShader(Shaders type = Shaders::COLOR);
 
 private:
 	std::vector<Shader> shaders;
