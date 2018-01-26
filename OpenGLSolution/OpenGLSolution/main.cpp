@@ -1,7 +1,7 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include "ShaderHandler.h"
 //#define GLEW_STATIC
-
 #include <GL\glew.h>
 #include <GLFW\glfw3.h>
 #include "Triangle.h"
