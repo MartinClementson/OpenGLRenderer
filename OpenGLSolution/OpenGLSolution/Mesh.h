@@ -32,11 +32,12 @@ public:
 	virtual void Draw() = 0;
 
 	TransformNode* GetTransform()const;
-private:
+protected:
 	TransformNode transform;
 	std::vector<Vertex> vertices;
+	std::vector<unsigned int> indices;
 
-	GLuint VBO, VAO;
+	GLuint VBO, VAO,EBO;
 };
 
 

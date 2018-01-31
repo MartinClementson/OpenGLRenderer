@@ -70,7 +70,7 @@ int main()
 	if (!shaderHandler.Init())
 		return 0;
 
-	Triangle* tri = new Triangle();
+	GEO::Triangle* tri = new GEO::Triangle();
 
 
 	while (!glfwWindowShouldClose(window)) //while window is open
