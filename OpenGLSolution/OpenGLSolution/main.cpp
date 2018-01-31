@@ -6,6 +6,9 @@
 #include <GLFW\glfw3.h>
 #include "Triangle.h"
 
+#include "SOIL2\SOIL2.h"
+
+
 // Window Dimensions
 const GLint WIDTH = 800, HEIGHT = 600;
 bool SetupWindow(GLFWwindow*& window)
@@ -60,6 +63,8 @@ int main()
 	if (!SetupWindow(window))
 		return 0;
 	
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	// Set up shaders
 	ShaderHandler shaderHandler;
 	if (!shaderHandler.Init())
