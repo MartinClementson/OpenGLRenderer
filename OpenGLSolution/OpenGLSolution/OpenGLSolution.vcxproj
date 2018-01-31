@@ -117,6 +117,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="ShaderHandler.cpp" />
     <ClCompile Include="SOIL2\etc1_utils.c" />
@@ -124,9 +125,11 @@
     <ClCompile Include="SOIL2\image_helper.c" />
     <ClCompile Include="SOIL2\SOIL2.c" />
     <ClCompile Include="TextureHandler.cpp" />
+    <ClCompile Include="TransformNode.cpp" />
     <ClCompile Include="Triangle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Mesh.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="ShaderHandler.h" />
     <ClInclude Include="SOIL2\etc1_utils.h" />
@@ -147,6 +150,7 @@
     <ClInclude Include="SOIL2\stb_image.h" />
     <ClInclude Include="SOIL2\stb_image_write.h" />
     <ClInclude Include="TextureHandler.h" />
+    <ClInclude Include="TransformNode.h" />
     <ClInclude Include="Triangle.h" />
   </ItemGroup>
   <ItemGroup>
