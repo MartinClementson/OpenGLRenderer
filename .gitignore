@@ -316,3 +316,35 @@ ASALocalRun/
 
 # MSBuild Binary and Structured Log
 *.binlog
+OpenGLSolution/Debug/OpenGLSolution.exe
+OpenGLSolution/Debug/OpenGLSolution.ilk
+OpenGLSolution/Debug/OpenGLSolution.pdb
+OpenGLSolution/OpenGLSolution.VC.db
+OpenGLSolution/OpenGLSolution/Debug/main.obj
+OpenGLSolution/OpenGLSolution/Debug/OpenGLSolution.log
+OpenGLSolution/OpenGLSolution/Debug/OpenGLSolution.tlog/CL.command.1.tlog
+OpenGLSolution/OpenGLSolution/Debug/OpenGLSolution.tlog/CL.read.1.tlog
+OpenGLSolution/OpenGLSolution/Debug/OpenGLSolution.tlog/CL.write.1.tlog
+OpenGLSolution/OpenGLSolution/Debug/OpenGLSolution.tlog/link.command.1.tlog
+OpenGLSolution/OpenGLSolution/Debug/OpenGLSolution.tlog/link.read.1.tlog
+OpenGLSolution/OpenGLSolution/Debug/OpenGLSolution.tlog/link.write.1.tlog
+OpenGLSolution/OpenGLSolution/Debug/OpenGLSolution.tlog/OpenGLSolution.lastbuildstate
+OpenGLSolution/OpenGLSolution/Debug/Triangle.obj
+OpenGLSolution/OpenGLSolution/Debug/vc140.idb
+OpenGLSolution/OpenGLSolution/Debug/vc140.pdb
+OpenGLSolution/Debug/OpenGLSolution.exe
+OpenGLSolution/Debug/OpenGLSolution.ilk
+OpenGLSolution/Debug/OpenGLSolution.pdb
+OpenGLSolution/OpenGLSolution.VC.db
+OpenGLSolution/OpenGLSolution/Debug/main.obj
+OpenGLSolution/OpenGLSolution/Debug/OpenGLSolution.log
+OpenGLSolution/OpenGLSolution/Debug/OpenGLSolution.tlog/CL.command.1.tlog
+OpenGLSolution/OpenGLSolution/Debug/OpenGLSolution.tlog/CL.read.1.tlog
+OpenGLSolution/OpenGLSolution/Debug/OpenGLSolution.tlog/CL.write.1.tlog
+OpenGLSolution/OpenGLSolution/Debug/OpenGLSolution.tlog/link.command.1.tlog
+OpenGLSolution/OpenGLSolution/Debug/OpenGLSolution.tlog/link.read.1.tlog
+OpenGLSolution/OpenGLSolution/Debug/OpenGLSolution.tlog/link.write.1.tlog
+OpenGLSolution/OpenGLSolution/Debug/OpenGLSolution.tlog/OpenGLSolution.lastbuildstate
+OpenGLSolution/OpenGLSolution/Debug/Triangle.obj
+OpenGLSolution/OpenGLSolution/Debug/vc140.idb
+OpenGLSolution/OpenGLSolution/Debug/vc140.pdb
