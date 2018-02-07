@@ -4,23 +4,34 @@
 #include "TransformNode.h"
 #include <vector>
 namespace GEO {
-
-struct Vertex
+struct Float3
 {
 	GLfloat x, y, z;
-	GLfloat r, g, b;
-	GLfloat u, v;
+	Float3() {};
+	Float3(GLfloat x, GLfloat y, GLfloat z) { this->x = x; this->y = y; this->z = z; };
+};
+struct Float2
+{
+	GLfloat x, y;
+	Float2() {};
+	Float2(GLfloat x, GLfloat y) { this->x = x; this->y = y;};
+};
+struct Vertex
+{
+	Float3 position;
+	Float3 color;
+	Float2 uv;
 	Vertex() {};
-	Vertex(GLfloat x, GLfloat y, GLfloat z, GLfloat r, GLfloat g, GLfloat b, GLfloat u, GLfloat v)
+	Vertex(Float3 pos, Float3 color,Float2 uv)
 	{
-		this->x = x;
-		this->y = y;
-		this->z = z;
-		this->r = r;
-		this->g = g;
-		this->b = b;
-		this->u = u;
-		this->v = v;
+		this->position.x = pos.x;
+		this->position.y = pos.y;
+		this->position.z = pos.z;
+		this->color.x    = color.x;
+		this->color.y    = color.y;
+		this->color.z    = color.z;
+		this->uv.x		 = uv.x;
+		this->uv.y		 = uv.y;
 	}
 };
 class Mesh

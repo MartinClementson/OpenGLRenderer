@@ -6,13 +6,10 @@ Triangle::Triangle()
 {
 
 	this->vertices.reserve(3);
-	this->vertices.push_back(Vertex(-0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 0.25f, 0.25f));
-	this->vertices.push_back(Vertex(0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 0.75f, 0.25f));
-	this->vertices.push_back(Vertex(0.0f, 0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 0.5f, 0.75f));
-	Vertex localVertices[3];
-	localVertices[0] = Vertex(-0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 0.25f, 0.25f);
-	localVertices[1] = Vertex(0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 0.75f, 0.25f);
-	localVertices[2] = Vertex(0.0f, 0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 0.5f, 0.75f);
+	this->vertices.push_back(Vertex(Float3(-0.5f, -0.5f, 0.0f), Float3(1.0f, 0.0f, 0.0f), Float2(0.25f, 0.25f)));
+	this->vertices.push_back(Vertex(Float3(0.5f, -0.5f, 0.0f ), Float3(0.0f, 1.0f, 0.0f), Float2(0.75f, 0.25f)));
+	this->vertices.push_back(Vertex(Float3(0.0f, 0.5f, 0.0f ),  Float3(0.0f, 0.0f, 1.0f), Float2(0.5f, 0.75f)));
+	
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
 	glGenBuffers(1, &EBO);
