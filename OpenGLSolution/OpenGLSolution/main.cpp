@@ -77,7 +77,7 @@ int main()
 
 	GEO::Triangle* tri = new GEO::Triangle();
 
-	Texture tex("images/bark.jpg");
+	Texture tex("images/tex.png");
 	shaderHandler.UseShader(Shaders::COLOR);
 	tex.SetActive(glGetUniformLocation(shaderHandler.GetActiveShader()->Program,"Diffuse"));
 	while (!glfwWindowShouldClose(window)) //while window is open

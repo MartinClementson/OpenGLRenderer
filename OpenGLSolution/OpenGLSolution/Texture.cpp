@@ -13,7 +13,7 @@ void Texture::SetActive(GLint uniformLoc)
 bool Texture::LoadImage(const char * filepath)
 {
 	glBindTexture(GL_TEXTURE_2D, texture);
-
+	//TODO: Fix PNG loading
 	unsigned char *image = SOIL_load_image(filepath, &width, &height, 0, SOIL_LOAD_RGBA);
 	if (image == nullptr)
 		return false;
