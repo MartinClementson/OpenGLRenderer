@@ -124,6 +124,7 @@
     <ClCompile Include="SOIL2\image_DXT.c" />
     <ClCompile Include="SOIL2\image_helper.c" />
     <ClCompile Include="SOIL2\SOIL2.c" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureHandler.cpp" />
     <ClCompile Include="TransformNode.cpp" />
     <ClCompile Include="Triangle.cpp" />
@@ -149,6 +150,7 @@
     <ClInclude Include="SOIL2\stbi_pvr_c.h" />
     <ClInclude Include="SOIL2\stb_image.h" />
     <ClInclude Include="SOIL2\stb_image_write.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureHandler.h" />
     <ClInclude Include="TransformNode.h" />
     <ClInclude Include="Triangle.h" />
