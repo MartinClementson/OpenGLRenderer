@@ -33,7 +33,7 @@ void TransformNode::Scale(glm::vec3 scale)
 void TransformNode::Update()
 {
 
-	GLint transLocation = 1;
+	GLint transLocation = 0;
 	glUniformMatrix4fv(transLocation, 1, GL_FALSE, glm::value_ptr(m_transform));
 	m_nodeDirty = false;
 }
