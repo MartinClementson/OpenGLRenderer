@@ -90,7 +90,7 @@ int main()
 		
 		// Draw OpenGL
 		GLuint loc = glGetUniformLocation(shaderHandler.GetActiveShader()->Program, "transform");
-		tri->GetTransform()->Rotate(glm::vec3(0.0f, 0.0f, 1.0f), (GLfloat)glfwGetTime() * -5.0f);
+		tri->GetTransform()->Rotate(glm::vec3(0.0f, 0.0f, 1.0f), (GLfloat)glfwGetTime() * -0.0005f);
 		tri->Draw();
 
 		glfwSwapBuffers(window);
