@@ -13,6 +13,13 @@ ShaderHandler::~ShaderHandler()
 {
 }
 
+const Shader * ShaderHandler::GetActiveShader() const
+{
+	if (m_activeShader == NONE)
+		return nullptr;
+	return &this->shaders[m_activeShader];
+}
+
 bool ShaderHandler::Init()
 {
 	bool success = true;
@@ -36,6 +43,7 @@ bool ShaderHandler::Init()
 
 bool ShaderHandler::UseShader(Shaders type)
 {
+	m_activeShader = type;
 	this->shaders[type].Use();
 	return true;
 }
