@@ -16,6 +16,12 @@
     <Filter Include="Shaders">
       <UniqueIdentifier>{6e43450d-5751-4c56-b683-21f477949626}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\images">
+      <UniqueIdentifier>{2aff6f27-5501-45a4-88a5-49db6ea63d1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\glm">
+      <UniqueIdentifier>{9d1820ee-7374-469c-bbad-abf71fa88fa5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -128,6 +134,75 @@
     <ClInclude Include="Texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="glm\common.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="glm\exponential.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="glm\ext.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="glm\fwd.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="glm\geometric.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="glm\glm.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="glm\integer.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="glm\mat2x2.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="glm\mat2x3.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="glm\mat2x4.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="glm\mat3x2.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="glm\mat3x3.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="glm\mat3x4.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="glm\mat4x2.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="glm\mat4x3.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="glm\mat4x4.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="glm\matrix.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="glm\packing.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="glm\trigonometric.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="glm\vec2.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="glm\vec3.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="glm\vec4.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="glm\vector_relational.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="core.vs">
@@ -136,5 +211,36 @@
     <None Include="core.frag">
       <Filter>Shaders</Filter>
     </None>
+    <None Include="glm\.appveyor.yml">
+      <Filter>Resource Files\glm</Filter>
+    </None>
+    <None Include="glm\.gitignore">
+      <Filter>Resource Files\glm</Filter>
+    </None>
+    <None Include="glm\.travis.yml">
+      <Filter>Resource Files\glm</Filter>
+    </None>
+    <None Include="glm\readme.md">
+      <Filter>Resource Files\glm</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\bark.jpg">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\bricks.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\mud.jpg">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="glm\CMakeLists.txt">
+      <Filter>Resource Files\glm</Filter>
+    </Text>
+    <Text Include="glm\copying.txt">
+      <Filter>Resource Files\glm</Filter>
+    </Text>
   </ItemGroup>
 </Project>
