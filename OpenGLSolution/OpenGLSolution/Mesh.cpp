@@ -4,6 +4,7 @@
 using namespace GEO;
 Mesh::Mesh()
 {
+
 }
 
 
@@ -14,7 +15,7 @@ Mesh::~Mesh()
 	glDeleteBuffers(1, &EBO);
 }
 
-TransformNode * GEO::Mesh::GetTransform() const
+TransformNode* GEO::Mesh::GetTransform() 
 {
-	return nullptr;
+	return &this->transform;
 }

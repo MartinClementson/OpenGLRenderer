@@ -76,7 +76,7 @@ int main()
 	}
 
 	GEO::Triangle* tri = new GEO::Triangle();
-
+	
 	Texture tex("images/tex.png");
 	shaderHandler.UseShader(Shaders::COLOR);
 	tex.SetActive(glGetUniformLocation(shaderHandler.GetActiveShader()->Program,"Diffuse"));
@@ -89,7 +89,8 @@ int main()
 		glClear(GL_COLOR_BUFFER_BIT);
 		
 		// Draw OpenGL
-		
+		GLuint loc = glGetUniformLocation(shaderHandler.GetActiveShader()->Program, "transform");
+		tri->GetTransform()->Rotate(glm::vec3(0.0f, 0.0f, 1.0f), (GLfloat)glfwGetTime() * -5.0f);
 		tri->Draw();
 
 		glfwSwapBuffers(window);

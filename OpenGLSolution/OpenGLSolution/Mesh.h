@@ -1,6 +1,5 @@
 #pragma once
-#include <GL\glew.h>
-#include <GLFW\glfw3.h>
+
 #include "TransformNode.h"
 #include <vector>
 namespace GEO {
@@ -42,7 +41,7 @@ public:
 
 	virtual void Draw() = 0;
 
-	TransformNode* GetTransform()const;
+	TransformNode* GetTransform();
 protected:
 	TransformNode transform;
 	std::vector<Vertex> vertices;
