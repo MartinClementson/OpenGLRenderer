@@ -5,7 +5,6 @@
 #include <GL\glew.h>
 #include <GLFW\glfw3.h>
 #include "Triangle.h"
-#include "Texture.h"
 
 #include "SOIL2\SOIL2.h"
 
@@ -73,9 +72,7 @@ int main()
 
 	GEO::Triangle* tri = new GEO::Triangle();
 
-	Texture tex("images/bark.jpg");
-	shaderHandler.UseShader(Shaders::COLOR);
-	tex.SetActive(glGetUniformLocation(shaderHandler.GetActiveShader()->Program,"Diffuse"));
+
 	while (!glfwWindowShouldClose(window)) //while window is open
 	{
 		glfwPollEvents();
@@ -85,7 +82,7 @@ int main()
 		glClear(GL_COLOR_BUFFER_BIT);
 		
 		// Draw OpenGL
-		
+		shaderHandler.UseShader(Shaders::COLOR);
 		tri->Draw();
 
 		glfwSwapBuffers(window);

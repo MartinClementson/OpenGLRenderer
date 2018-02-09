@@ -159,11 +159,6 @@
     <None Include="core.frag" />
     <None Include="core.vs" />
   </ItemGroup>
-  <ItemGroup>
-    <Image Include="images\bark.jpg" />
-    <Image Include="images\bricks.png" />
-    <Image Include="images\mud.jpg" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
