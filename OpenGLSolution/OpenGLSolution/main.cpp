@@ -69,7 +69,11 @@ int main()
 	// Set up shaders
 	ShaderHandler shaderHandler;
 	if (!shaderHandler.Init())
+	{
+		//Add Messagebox here
+		glfwTerminate();
 		return 0;
+	}
 
 	GEO::Triangle* tri = new GEO::Triangle();
 
