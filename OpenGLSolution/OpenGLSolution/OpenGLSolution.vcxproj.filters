@@ -16,6 +16,9 @@
     <Filter Include="Shaders">
       <UniqueIdentifier>{6e43450d-5751-4c56-b683-21f477949626}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\images">
+      <UniqueIdentifier>{2aff6f27-5501-45a4-88a5-49db6ea63d1b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -136,5 +139,16 @@
     <None Include="core.frag">
       <Filter>Shaders</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\bark.jpg">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\bricks.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\mud.jpg">
+      <Filter>Resource Files\images</Filter>
+    </Image>
   </ItemGroup>
 </Project>
