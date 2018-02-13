@@ -63,7 +63,7 @@ int main()
 	GLFWwindow *window = nullptr;
 	if (!SetupWindow(window))
 		return 0;
-	
+	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	// Set up shaders
@@ -80,17 +80,46 @@ int main()
 	Texture tex("images/tex.png");
 	shaderHandler.UseShader(Shaders::COLOR);
 	tex.SetActive(glGetUniformLocation(shaderHandler.GetActiveShader()->Program,"Diffuse"));
+
+	
+	
 	while (!glfwWindowShouldClose(window)) //while window is open
 	{
 		glfwPollEvents();
 
 		// Render
 		glClearColor(0.2f,0.3f,0.3f,1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		
+		
+		
+		////TEMP
+		glm::mat4 projection;
+		projection = glm::perspective(45.0f, (GLfloat)WIDTH / (GLfloat)HEIGHT, 0.1f, 1000.0f);
+		
+		glm::mat4 model = glm::mat4();
+		glm::mat4 view = glm::mat4();
+		
+		model = glm::rotate(model, (GLfloat)glfwGetTime()* 0.2f, glm::vec3(0.5f, 1.0f, 0.0f));
+		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+
+		GLint modelLoc = glGetUniformLocation(shaderHandler.GetActiveShader()->Program, "model");
+		GLint viewLoc = glGetUniformLocation(shaderHandler.GetActiveShader()->Program, "view");
+		GLint projLoc = glGetUniformLocation(shaderHandler.GetActiveShader()->Program, "proj");
+
+
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+
+		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+
+		glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
+		////END TEMP
+		
+		
 		
 		// Draw OpenGL
 		GLuint loc = glGetUniformLocation(shaderHandler.GetActiveShader()->Program, "transform");
-		tri->GetTransform()->Rotate(glm::vec3(0.0f, 0.0f, 1.0f), (GLfloat)glfwGetTime() * -0.0005f);
+		//tri->GetTransform()->Rotate(glm::vec3(0.0f, 0.0f, 1.0f), (GLfloat)glfwGetTime() * -0.0005f);
 		tri->Draw();
 
 		glfwSwapBuffers(window);
