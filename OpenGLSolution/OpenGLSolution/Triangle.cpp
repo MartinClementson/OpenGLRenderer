@@ -43,10 +43,10 @@ Triangle::~Triangle()
 	
 }
 
-void Triangle::Draw()
-{
-	if (this->transform.GetDirtyState())
-		this->transform.Update();
-	glBindVertexArray(VAO);
-	glDrawArrays(GL_TRIANGLES, 0, 3);
-}
+//void Triangle::Draw()
+//{
+//	if (this->transform.GetDirtyState())
+//		this->transform.Update();
+//	glBindVertexArray(VAO);
+//	glDrawArrays(GL_TRIANGLES, 0, 3);
+//}

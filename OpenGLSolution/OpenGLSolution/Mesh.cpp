@@ -15,6 +15,15 @@ Mesh::~Mesh()
 	glDeleteBuffers(1, &EBO);
 }
 
+void GEO::Mesh::Draw()
+{
+	if (this->transform.GetDirtyState())
+		this->transform.Update();
+	glBindVertexArray(VAO);
+	glDrawArrays(GL_TRIANGLES, 0, this->vertices.size());
+	glBindVertexArray(0);
+}
+
 TransformNode* GEO::Mesh::GetTransform() 
 {
 	return &this->transform;

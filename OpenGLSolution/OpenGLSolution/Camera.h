@@ -9,6 +9,7 @@ const GLfloat SENSITIVITY  = 0.25f;
 const GLfloat ZOOM		   = 45.0f;
 class Camera
 {
+public:
 	enum Cam_Movement
 	{
 		FORWARD,
@@ -27,11 +28,11 @@ private:
 	GLfloat m_pitch;
 	GLfloat m_movementSpeed;
 	GLfloat m_mouseSensitivity;
-	GLfloat m_zoom;
+	GLfloat m_zoom = 45.0f;
 	void UpdateCamVectors();
+	Camera() {};
 public:
 	Camera(glm::vec3 pos, glm::vec3 up, GLfloat yaw, GLfloat pitch);
-	Camera() {};
 	
 	~Camera();
 

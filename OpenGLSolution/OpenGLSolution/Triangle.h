@@ -10,7 +10,7 @@ public:
 	Triangle();
 	~Triangle();
 
-	void Draw();
+	void Draw() { Mesh::Draw(); };
 };
 
 } // End namespace GEO

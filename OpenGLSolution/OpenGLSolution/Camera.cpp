@@ -47,7 +47,6 @@ void Camera::ProcessMouseMovement(GLfloat xOffset, GLfloat yOffset, GLboolean co
 	}
 	this->UpdateCamVectors();
 }
-
 void Camera::ProcessMouseScroll(GLfloat yOffset)
 {
 	if (this->m_zoom >= 1.0f && this->m_zoom <= 45.0f)
@@ -64,8 +63,6 @@ void Camera::ProcessMouseScroll(GLfloat yOffset)
 	}
 
 }
-
-
 void Camera::UpdateCamVectors()
 {
 	glm::vec3 front;
@@ -79,16 +76,8 @@ void Camera::UpdateCamVectors()
 }
 
 
-//Camera::Camera(glm::vec3 pos, glm::vec3 up, GLfloat yaw, GLfloat pitch)
-//{
-//	this->m_transform.SetPos(pos);
-//	this->m_worldUp = up;
-//	this->m_yaw = yaw;
-//	this->m_pitch = pitch;
-//	this->UpdateCamVectors();
-//
-//}
-Camera::Camera(glm::vec3 pos = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f), GLfloat yaw = YAW, GLfloat pitch = PITCH) : m_front(glm::vec3(0.0f, 0.0f, -1.0f)), m_movementSpeed(SPEED), m_mouseSensitivity(SENSITIVITY), m_zoom(ZOOM)
+
+Camera::Camera(glm::vec3 pos = glm::vec3(0.0f, 0.0f, -3.0f), glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f), GLfloat yaw = YAW, GLfloat pitch = PITCH) : m_front(glm::vec3(0.0f, 0.0f, -1.0f)), m_movementSpeed(SPEED), m_mouseSensitivity(SENSITIVITY), m_zoom(ZOOM)
 {
 	this->m_transform.SetPos(pos);
 	this->m_worldUp = up;
