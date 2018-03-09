@@ -6,12 +6,22 @@
 #include <GLFW\glfw3.h>
 #include "Triangle.h"
 #include "Texture.h"
-
+#include "Camera.h"
 #include "SOIL2\SOIL2.h"
 
 
 // Window Dimensions
 const GLint WIDTH = 800, HEIGHT = 600;
+int SCREEN_WIDTH, SCREEN_HEIGHT;
+
+//void KeyCallback(GLFWwindow *window, int key, int scanCode, int action, int mode);
+//void ScrollCallback(GLFWwindow* window, double xOffset, double yOffset);
+//void MouseCallback(GLFWwindow* window, double xPos, double yPos);
+//void DoMovement();
+//
+//Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+//GLfloat lastX = WIDTH  / 2.0f;
+//GLfloat lastY = HEIGHT / 2.0f;
 bool SetupWindow(GLFWwindow*& window)
 {
 	glfwInit(); //Initialize
@@ -28,8 +38,8 @@ bool SetupWindow(GLFWwindow*& window)
 	window = glfwCreateWindow(WIDTH, HEIGHT, "Learn OpenGL",nullptr,nullptr);
 
 
-	int screenWitdh, screenHeight;
-	glfwGetFramebufferSize(window, &screenWitdh, &screenHeight); // Get the proper size relative to the screen pixel density
+	
+	glfwGetFramebufferSize(window, &SCREEN_WIDTH, &SCREEN_HEIGHT); // Get the proper size relative to the screen pixel density
 
 	if (nullptr == window)
 	{
@@ -40,6 +50,11 @@ bool SetupWindow(GLFWwindow*& window)
 
 	glfwMakeContextCurrent(window);
 
+	//glfwSetKeyCallback(window, KeyCallback);
+	//glfwSetCursorPosCallback(window, MouseCallback);
+	//glfwSetScrollCallback(window, ScrollCallback);
+	//glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
 	glewExperimental = GL_TRUE; // tell Glew to use a modern approach to retrieve function pointers and extensions
 
 	if (GLEW_OK != glewInit()) 
@@ -48,13 +63,11 @@ bool SetupWindow(GLFWwindow*& window)
 		return false;
 	}
 
-	glViewport(0, 0, screenWitdh, screenHeight);
+	glViewport(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
 	return true;
 
 }
-
-
 
 int main()
 {
@@ -104,8 +117,8 @@ int main()
 		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
 
 		GLint modelLoc = glGetUniformLocation(shaderHandler.GetActiveShader()->Program, "model");
-		GLint viewLoc = glGetUniformLocation(shaderHandler.GetActiveShader()->Program, "view");
-		GLint projLoc = glGetUniformLocation(shaderHandler.GetActiveShader()->Program, "proj");
+		GLint viewLoc  = glGetUniformLocation(shaderHandler.GetActiveShader()->Program, "view");
+		GLint projLoc  = glGetUniformLocation(shaderHandler.GetActiveShader()->Program, "proj");
 
 
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
