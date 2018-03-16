@@ -189,6 +189,10 @@
     <None Include="glm\.gitignore" />
     <None Include="glm\.travis.yml" />
     <None Include="glm\readme.md" />
+    <None Include="lamp.frag" />
+    <None Include="lamp.vs" />
+    <None Include="lighting.frag" />
+    <None Include="lighting.vs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="images\bark.jpg" />

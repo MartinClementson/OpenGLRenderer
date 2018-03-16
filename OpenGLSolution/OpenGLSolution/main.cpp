@@ -9,6 +9,7 @@
 #include "Camera.h"
 #include "SOIL2\SOIL2.h"
 #include "Cube.h"
+#include <Windows.h>
 
 
 // Window Dimensions
@@ -27,6 +28,11 @@ GLfloat deltaTime = 0.0f;
 GLfloat lastFrame = 0.0f;
 bool keys[1024];
 bool firstMouse = true;
+
+
+glm::vec3 lightpos(1.2f, 1.0f, 2.0f);
+glm::vec3 lightColor(0.0f, 0.0f, 1.0f);
+
 bool SetupWindow(GLFWwindow*& window)
 {
 	glfwInit(); //Initialize
@@ -88,6 +94,7 @@ int main()
 	ShaderHandler shaderHandler;
 	if (!shaderHandler.Init())
 	{
+		MessageBox(NULL, "Could not initialize shaders","Shader error", MB_ICONWARNING | MB_OK);
 		//Add Messagebox here
 		glfwTerminate();
 		return 0;
@@ -119,10 +126,13 @@ int main()
 	//GEO::Cube* cube	   = new GEO::Cube();
 	Texture tex("images/tex.png");
 	shaderHandler.UseShader(Shaders::COLOR);
-	tex.SetActive(glGetUniformLocation(shaderHandler.GetActiveShader()->Program,"Diffuse"));
+	GLuint program = shaderHandler.GetActiveShader()->Program;
+	tex.SetActive(glGetUniformLocation(program,"Diffuse"));
+	GLint lightLoc	    = glGetUniformLocation(program, "lightColor");
+	GLint lightColorLoc = glGetUniformLocation(program, "lightPosition");
+	glUniform3fv(lightLoc, 1, glm::value_ptr(lightpos));
+	glUniform3fv(lightColorLoc, 1, glm::value_ptr(lightColor));
 
-	
-	
 	while (!glfwWindowShouldClose(window)) //while window is open
 	{
 		GLfloat currentFrame = glfwGetTime();

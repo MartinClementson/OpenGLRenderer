@@ -4,8 +4,20 @@
 
 ShaderHandler::ShaderHandler()
 {
+	for (size_t i = 0; i < NUM_SHADERS; i++)
+	{
+		shaderFiles[i][VS_SHADER] = "";
+		shaderFiles[i][FS_SHADER] = "";
+
+	}
 	shaderFiles[COLOR][VS_SHADER] = "core.vs";
 	shaderFiles[COLOR][FS_SHADER] = "core.frag";
+
+	//shaderFiles[LIGHTING][VS_SHADER] = "lighting.vs";
+	//shaderFiles[LIGHTING][FS_SHADER] = "lighting.frag";
+	//
+	//shaderFiles[LAMP][VS_SHADER] = "lamp.vs";
+	//shaderFiles[LAMP][FS_SHADER] = "lamp.frag";
 }
 
 
@@ -26,8 +38,13 @@ bool ShaderHandler::Init()
 
 	for (size_t i = 0; i < NUM_SHADERS; i++)
 	{
+
+		if (shaderFiles[i][VS_SHADER] == "" || shaderFiles[i][FS_SHADER] == "")
+			continue;
+
 		const char * vs_str = shaderFiles[i][VS_SHADER].c_str();
 		const char * fs_str = shaderFiles[i][FS_SHADER].c_str();
+		
 		try {
 
 		this->shaders.push_back(Shader(vs_str, fs_str));

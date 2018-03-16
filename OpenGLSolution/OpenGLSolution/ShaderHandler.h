@@ -16,6 +16,8 @@ enum ShaderFiles {
 enum Shaders {
 	NONE = -1,
 	COLOR = 0,
+	LIGHTING,
+	LAMP,
 
 	
 	NUM_SHADERS
