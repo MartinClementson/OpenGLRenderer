@@ -14,7 +14,6 @@ uniform sampler2D Diffuse;
 void main()
 {
 	//color = vec4(color,1.0f);
-	vec3 temp = lightPosition;
-	temp -= lightPosition;
-	outColor = vec4(lightColor + temp,1.0f); //texture(Diffuse,texCoord);
+	
+	outColor = vec4(lightColor ,1.0f); //texture(Diffuse,texCoord);
 };

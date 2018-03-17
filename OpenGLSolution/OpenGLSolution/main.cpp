@@ -31,7 +31,7 @@ bool firstMouse = true;
 
 
 glm::vec3 lightpos(1.2f, 1.0f, 2.0f);
-glm::vec3 lightColor(0.0f, 0.0f, 1.0f);
+glm::vec3 lightColor(0.0f, 1.0f, 1.0f);
 
 bool SetupWindow(GLFWwindow*& window)
 {
@@ -123,13 +123,12 @@ int main()
 		meshes.at(i)->GetTransform()->SetPos(meshPositions.at(i));
 		
 	}
-	//GEO::Cube* cube	   = new GEO::Cube();
 	Texture tex("images/tex.png");
 	shaderHandler.UseShader(Shaders::COLOR);
 	GLuint program = shaderHandler.GetActiveShader()->Program;
 	tex.SetActive(glGetUniformLocation(program,"Diffuse"));
-	GLint lightLoc	    = glGetUniformLocation(program, "lightColor");
-	GLint lightColorLoc = glGetUniformLocation(program, "lightPosition");
+	GLint lightLoc	    = glGetUniformLocation(program, "lightPosition");
+	GLint lightColorLoc = glGetUniformLocation(program, "lightColor");
 	glUniform3fv(lightLoc, 1, glm::value_ptr(lightpos));
 	glUniform3fv(lightColorLoc, 1, glm::value_ptr(lightColor));
 
@@ -172,9 +171,10 @@ int main()
 		
 		for (size_t i = 0; i < meshes.size(); i++)
 		{
+			
 			glm::mat4 model;
-			model = glm::translate(model, meshes.at(i)->GetTransform()->GetPos());
 			GLfloat angle = 20.0f * i;
+			model = glm::translate(model, meshes.at(i)->GetTransform()->GetPos());
 			model = glm::rotate(model, angle, glm::vec3(1.0f, 0.3f, 0.5f));
 
 			glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
